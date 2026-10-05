@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Explorer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">City Explorer</div>
+        <nav>
+            <a href="#destinatii">Destinații</a>
+            <a href="#planifica">Planifică</a>
+            <a href="#recomandari">Recomandări</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Secțiunea Destinații -->
+        <section id="destinatii">
+            <h2>Destinații Populare</h2>
+            <div class="cards-container">
+                <article class="card featured">
+                    <h3>Lisabona</h3>
+                    <p class="country">Portugalia</p>
+                    <p class="description">Un oraș fermecat de pe coastă, celebru pentru tramvaiele sale galbene, cartierele istorice și atmosfera relaxantă.</p>
+                    <p class="duration">Durată recomandată: 4 zile</p>
+                </article>
+                <article class="card">
+                    <h3>Paris</h3>
+                    <p class="country">Franța</p>
+                    <p class="description">Capitala Franței, recunoscută pentru Turnul Eiffel, bulevarde elegante și muzee de artă de renume mondial.</p>
+                    <p class="duration">Durată recomandată: 5 zile</p>
+                </article>
+                <article class="card">
+                    <h3>Roma</h3>
+                    <p class="country">Italia</p>
+                    <p class="description">Orașul Etern, plin de istorie antică, de la Colosseum până la Vatican și fântâni spectaculoase.</p>
+                    <p class="duration">Durată recomandată: 4 zile</p>
+                </article>
+                <article class="card">
+                    <h3>Praga</h3>
+                    <p class="country">Republica Cehă</p>
+                    <p class="description">Orașul celor o sută de clopotnițe, cu o arhitectură gotică impresionantă și un Pod Charles plin de viață.</p>
+                    <p class="duration">Durată recomandată: 3 zile</p>
+                </article>
+                <article class="card">
+                    <h3>Barcelona</h3>
+                    <p class="country">Spania</p>
+                    <p class="description">O combinație unică de plaje mediteraneene și opere arhitecturale futuriste semnate de Antoni Gaudí.</p>
+                    <p class="duration">Durată recomandată: 4 zile</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Secțiunea Planifică -->
+        <section id="planifica">
+            <h2>Planifică o Excursie</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Nume</label>
+                    <input id="name" name="name" type="text" required>
+                </div>
+                <div class="form-group">
+                    <label for="destination">Destinație</label>
+                    <select id="destination" name="destination" required>
+                        <option value="">Alege...</option>
+                        <option value="Lisabona">Lisabona</option>
+                        <option value="Paris">Paris</option>
+                        <option value="Roma">Roma</option>
+                        <option value="Praga">Praga</option>
+                        <option value="Barcelona">Barcelona</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="days">Număr de zile</label>
+                    <input id="days" name="days" type="number" min="1" required>
+                </div>
+                <button type="submit">Planifică excursia</button>
+            </form>
+        </section>
+
+        <!-- Secțiunea Recomandări -->
+        <section id="recomandari">
+            <h2>Recomandări și Sfaturi</h2>
+            <ul>
+                <li>Rezervă biletele la principalele obiective turistice cu câteva săptămâni înainte pentru a evita cozile lungi.</li>
+                <li>Folosește transportul public local (metrou sau tramvai) – este eficient și mult mai economic.</li>
+                <li>Gustă preparatele culinare tradiționale în micile restaurante de cartier, ferite de zonele ultra-turistice.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 City Explorer. Autor: Radu Mario Alexandru.</p>
+    </footer>
+</body>
+</html>
