@@ -84,3 +84,12 @@ button {
 .card.vizitat button {
   background: #34a853;
 }
+
+.card .btn-sterge {
+  background: #e74c3c;
+  margin-top: 0.4rem;
+}
+
+.card .btn-sterge:hover {
+  background: #c0392b;
+}
