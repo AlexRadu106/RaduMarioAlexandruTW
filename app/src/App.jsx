@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { getDestinatii, postDestinatie, patchVizitat } from './api/destinatii.js';
+import { getNevizitate, totalZile, stergeDestinatie } from './utils/destinatii.js';
 import ListaDestinatii from './components/ListaDestinatii.jsx';
 import FormularDestinatie from './components/FormularDestinatie.jsx';
 import Rezumat from './components/Rezumat.jsx';
 import Cautare from './components/Cautare.jsx';
-import { getNevizitate, totalZile } from './utils/destinatii.js';
-import './App.css';
 import PanouStatistici from './components/PanouStatistici.jsx';
+import './App.css';
 
 export default function App() {
   const [destinatii, setDestinatii] = useState([]);
@@ -52,6 +52,10 @@ export default function App() {
     }
   }
 
+  function handleDelete(id) {
+    setDestinatii((curent) => stergeDestinatie(curent, id));
+  }
+
   const nevizitate = getNevizitate(destinatii);
   const textCautare = cautare.trim().toLowerCase();
   const afisate = destinatii.filter(
@@ -71,12 +75,12 @@ export default function App() {
   return (
     <main>
       <h1>City Explorer</h1>
+      <PanouStatistici />
       <Rezumat
         total={destinatii.length}
         nevizitate={nevizitate.length}
         zile={totalZile(nevizitate)}
       />
-      <PanouStatistici />
       <FormularDestinatie onAdd={handleAdd} seTrimite={seTrimite} />
       <Cautare valoare={cautare} onChange={(e) => setCautare(e.target.value)} />
 
@@ -85,7 +89,11 @@ export default function App() {
       ) : afisate.length === 0 ? (
         <p className="gol">Niciun rezultat pentru &laquo;{cautare}&raquo;.</p>
       ) : (
-        <ListaDestinatii destinatii={afisate} onToggle={handleToggle} />
+        <ListaDestinatii 
+          destinatii={afisate} 
+          onToggle={handleToggle} 
+          onDelete={handleDelete} 
+        />
       )}
     </main>
   );
