@@ -163,3 +163,20 @@ button:disabled {
   margin: 0 0 0.6rem 0; 
   font-size: 1.1rem;
 }
+.panou label {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+.panou input {
+  width: 70px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #c3c7cf;
+  border-radius: 6px;
+  font: inherit;
+}
+.panou ul {
+  margin: 0.7rem 0 0 0;
+  padding-left: 1.1rem;
+  color: #4b5563;
+  font-size: 0.95rem;
+}

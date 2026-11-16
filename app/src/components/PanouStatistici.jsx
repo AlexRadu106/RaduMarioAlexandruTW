@@ -15,10 +15,10 @@ export default function PanouStatistici() {
         }
         const date = await response.json();
         setDestinatii(date);
-        setIncarcare(false);
       } catch (err) {
         setEroare(err.message);
-        setIncarcare(false); 
+      } finally {
+        setIncarcare(false);
       }
     }
     incarca();
@@ -32,6 +32,7 @@ export default function PanouStatistici() {
     return <p className="stare eroare">Statistici indisponibile: {eroare}</p>;
   }
 
+  // Corectat: filtrare corectă cu >= și conversie la număr
   const filtrate = destinatii.filter((d) => d.zile >= Number(prag));
   const totalZile = filtrate.reduce((suma, d) => suma + d.zile, 0);
   const medie = filtrate.length === 0 ? 0 : totalZile / filtrate.length;

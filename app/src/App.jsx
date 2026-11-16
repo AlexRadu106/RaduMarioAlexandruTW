@@ -6,6 +6,7 @@ import Rezumat from './components/Rezumat.jsx';
 import Cautare from './components/Cautare.jsx';
 import { getNevizitate, totalZile } from './utils/destinatii.js';
 import './App.css';
+import PanouStatistici from './components/PanouStatistici.jsx';
 
 export default function App() {
   const [destinatii, setDestinatii] = useState([]);
@@ -75,6 +76,7 @@ export default function App() {
         nevizitate={nevizitate.length}
         zile={totalZile(nevizitate)}
       />
+      <PanouStatistici />
       <FormularDestinatie onAdd={handleAdd} seTrimite={seTrimite} />
       <Cautare valoare={cautare} onChange={(e) => setCautare(e.target.value)} />
 
